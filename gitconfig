@@ -1,0 +1,10 @@
+[url "git://anongit.kde.org/"]
+    insteadOf = kde:
+[url "git@git.kde.org:"]
+    pushInsteadOf = kde:
+[user]
+    name = Antonis Tsiapaliokas
+    email = kok3rs@gmail.com
+[color]
+    ui = true
+    insteadOf = kde:
