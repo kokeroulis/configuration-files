@@ -97,7 +97,7 @@ end module-set
 module-set baselibs-pimlibs
     repository kde-projects
 
-    use-modules akonadi kdepimlibs nepomuk-widgets # kdepim
+    use-modules akonadi kdepimlibs nepomuk-widgets kdepim-runtime kdepim
 end module-set
 
 module-set workspace
@@ -118,11 +118,25 @@ module-set base
     use-modules kde-baseapps kate konsole ark libktorrent ktorrent
 end module-set
 
-module-set lightdm-kde
+
+module-set kdegraphics
     repository kde-projects
-    use-modules lightdm-kde
+    use-modules kde/kdegraphics/libs kde/kdegraphics/*
 end module-set
 
+module lightdm-qt
+    repository bzr://lp:lightdm
+end module
+
+module lightdm
+    repository git://anongit.kde.org/lightdm.git
+    branch v0.2
+end module
+
+module-set konversation
+    repository kde-projects
+    use-modules konversation
+end module-set
 #module-set kdevelop
 #    repository kde-projects
 #    use-modules kdevplatform kdevelop
@@ -147,3 +161,16 @@ module-set plasmate
     repository kde-projects
     use-modules plasmate
 end module-set
+
+module contour
+    repository kde:contour
+end module
+
+module-set active
+    repository kde-projects
+    use-modules share-like-connect plasma-mobile bodega-client kwallet
+end module-set
+
+module bodega-client
+    cmake-options -DCMAKE_BUILD_TYPE=DebugFull
+end module
